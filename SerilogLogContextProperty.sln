@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SerilogLogContextProperty", "SerilogLogContextProperty\SerilogLogContextProperty.csproj", "{4BFD51A1-78E9-42DB-9161-45F75485D6D7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SerilogLogContextProperty.UnitTests", "SerilogLogContextProperty.UnitTests\SerilogLogContextProperty.UnitTests.csproj", "{EA1C047F-F637-4F3A-8F50-46CF080AC8F0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4BFD51A1-78E9-42DB-9161-45F75485D6D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BFD51A1-78E9-42DB-9161-45F75485D6D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BFD51A1-78E9-42DB-9161-45F75485D6D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BFD51A1-78E9-42DB-9161-45F75485D6D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA1C047F-F637-4F3A-8F50-46CF080AC8F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA1C047F-F637-4F3A-8F50-46CF080AC8F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA1C047F-F637-4F3A-8F50-46CF080AC8F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA1C047F-F637-4F3A-8F50-46CF080AC8F0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0A470948-5C32-4911-A7CB-501674F01B94}
+	EndGlobalSection
+EndGlobal
