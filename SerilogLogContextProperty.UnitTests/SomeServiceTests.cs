@@ -1,5 +1,6 @@
 using FluentAssertions;
 using Serilog;
+using Serilog.Events;
 using Serilog.Sinks.TestCorrelator;
 
 namespace SerilogLogContextProperty.UnitTests;
@@ -16,7 +17,7 @@ public class SomeServiceTests
     [Theory]
     [InlineData(true, "propertyOne")]
     [InlineData(false, "propertyTwo")]
-    public void Log_Context_Should_Have_Correct_Property(bool usePropertyOne, string expectedProperty)
+    public void Log_Context_Should_Have_Correct_Property(bool usePropertyOne, string expectedKey)
     {
         using (TestCorrelator.CreateContext())
         using (var logger = new LoggerConfiguration()
@@ -29,7 +30,9 @@ public class SomeServiceTests
             _service.SomeMethod(usePropertyOne);
 
             var logEvent = TestCorrelator.GetLogEventsFromCurrentContext().Single();
-            logEvent.Properties.Single().Key.Should().Be(expectedProperty);
+            var logEventProperty = logEvent.Properties.Single();
+            logEventProperty.Key.Should().Be(expectedKey);
+            logEventProperty.Value.Should().Be(1);
         }
     }
 }
