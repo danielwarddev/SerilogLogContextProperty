@@ -15,9 +15,9 @@ public class SomeServiceTests
     }
 
     [Theory]
-    [InlineData(true, "propertyOne")]
-    [InlineData(false, "propertyTwo")]
-    public void Log_Context_Should_Have_Correct_Property(bool usePropertyOne, string expectedKey)
+    [InlineData(true, "propertyOne", 1)]
+    [InlineData(false, "propertyTwo", 2)]
+    public void Log_Context_Should_Have_Correct_Property(bool usePropertyOne, string expectedKey, int expectedValue)
     {
         using (TestCorrelator.CreateContext())
         using (var logger = new LoggerConfiguration()
@@ -31,8 +31,10 @@ public class SomeServiceTests
 
             var logEvent = TestCorrelator.GetLogEventsFromCurrentContext().Single();
             var logEventProperty = logEvent.Properties.Single();
+            var propertyValue = logEventProperty.Value as ScalarValue;
+
             logEventProperty.Key.Should().Be(expectedKey);
-            logEventProperty.Value.Should().Be(1);
+            propertyValue.Value.Should().Be(expectedValue);
         }
     }
 }
