@@ -16,7 +16,7 @@ public class SomeServiceTests
     [Theory]
     [InlineData(true, "propertyOne")]
     [InlineData(false, "propertyTwo")]
-    public void Log_Context_Should_Have_First_Property_When_True(bool usePropertyOne, string expectedProperty)
+    public void Log_Context_Should_Have_Correct_Property(bool usePropertyOne, string expectedProperty)
     {
         using (TestCorrelator.CreateContext())
         using (var logger = new LoggerConfiguration()
