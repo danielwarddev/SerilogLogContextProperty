@@ -1,11 +1,11 @@
-﻿using Serilog;
-using Serilog.Context;
+﻿using Serilog.Context;
+using Serilog;
 
 namespace SerilogLogContextProperty;
 
-public class SomeService
+public class ServiceWithStaticLogger
 {
-    public void SomeMethod(bool usePropertyOne)
+    public void MethodUsingStaticLogger(bool usePropertyOne)
     {
         var logPropertyName = usePropertyOne ? "propertyOne" : "propertyTwo";
         var logPropertyValue = usePropertyOne ? 1 : 2;
